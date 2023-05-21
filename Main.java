@@ -4,13 +4,17 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.println("Stock Account Management Program ! \n");
         System.out.println("this is first a program");
-        Scanner sc = new Scanner(System.in);
+
         StockInput stockInput = new StockInput();
+        CheckAccount accountTest = new CheckAccount();
+
         boolean isExit = false;
         while (!isExit) {
-            System.out.println("Select the option from below : " + "\n1.Add Stock" + "\n2.print stock report" + "\n3.Exit program");
+            System.out.println("Select the option from below : " + "\n1.Add Stock" + "\t\t\t2.print stock report" + "\n3.Debit Money"+"\t\t4.Credit Money"+"\n5. Check Balance"+"\t6.Exit!");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -22,7 +26,17 @@ public class Main {
                     stockInput.printStock();
                     break;
                 case 3:
-                    System.out.println("Exit");
+                    accountTest.debit();
+                    break;
+                case 4:
+                    accountTest.credit();
+                    break;
+                case 5:
+                    accountTest.check_Balance();
+                    break;
+                case 6:
+                    System.out.println("Exiting......");
+                    isExit = true;
                     break;
                 default:
                     System.out.println("Kindly Enter a valid option .....");
