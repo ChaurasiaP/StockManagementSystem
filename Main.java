@@ -41,7 +41,6 @@ public class Main {
                 default:
                     System.out.println("Kindly Enter a valid option .....");
             }
-            isExit = false;
         }
     }
 
